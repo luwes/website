@@ -9,7 +9,7 @@ const plugins = [
   require('postcss-cssnext')({
     warnForDuplicates: false
   }),
-  require('tailwindcss'),
+  // require('tailwindcss'),
   require('autoprefixer'),
   // require('postcss-comment'),
   // require('postcss-mixins'),
