@@ -1,0 +1,14 @@
+.DS_Store
+node_modules
+*.sublime-project
+yarn-error.log
+.nyc_output/
+coverage
+*.lcov
+
+dist/
+module/
+
+# Local Netlify folder
+.netlify
+/public/

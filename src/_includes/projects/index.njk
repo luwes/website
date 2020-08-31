@@ -1,0 +1,45 @@
+{% extends my.layout %}
+
+{% set title = "Projects" %}
+{% set bodyClass = "projects index" %}
+
+{% block main %}
+  <div class="container">
+
+    <h1 class="projects-title">
+      Discover a few favorited projects below,
+      or visit my <a href="https://github.com/luwes" target="_blank">Github</a> for more.
+    </h1>
+
+    <div class="projectsRow">
+      {%- for entry in collections.projects -%}
+
+        {% set url = entry.url | replaceRE('/pjax', '') %}
+        {% set newWindow = false %}
+        {% if entry.data.hyperlink %}
+          {% set url = entry.data.hyperlink %}
+          {% set newWindow = true %}
+        {% endif %}
+
+        <div class="projectsRow-column">
+          <article class="card card--{{ entry.data.title | camel }}">
+            <a class="card-link" href="{{ url }}" {{ ' target="_blank"' if newWindow }}>
+              <span class="card-figure" style="fill: {{ entry.data.color }}">
+                {%- if entry.data.icon -%}
+                  {{ ('src/images/project-icons/' ~ entry.data.icon) | inline | safe }}
+                {%- endif -%}
+              </span>
+              <h2 class="card-title">
+                {{- entry.data.title -}}
+              </h2>
+            </a>
+            <p class="card-description">
+              {{- entry.data.excerpt -}}
+            </p>
+          </article>
+        </div>
+
+      {%- endfor -%}
+    </div>
+  </div>
+{% endblock %}

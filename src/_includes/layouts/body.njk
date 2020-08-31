@@ -1,0 +1,67 @@
+{% extends "layouts/site.njk" %}
+
+{% block body %}
+
+	{{ 'src/images/global.svg' | inline | safe }}
+
+	<header class="siteHeader">
+		<a class="siteLogo" href="/">
+			<svg class="siteLogo-svg">
+				<use xlink:href="#wesley-luyten-logo" />
+			</svg>
+		</a>
+		<nav class="siteNav">
+			<ul class="siteMenu js-siteMenu">
+        {% set navPages = collections.all | eleventyNavigation %}
+        {%- for item in navPages -%}
+					<li class="siteMenu-item{% if item.url == page.url %} siteMenu-item-isActive{% endif %}" data-section="{{ item.key | lower }}">
+						<a href="{{ item.url }}">
+							{{- item.title -}}
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</nav>
+	</header>
+
+	<main class="siteMain js-pjaxBody" role="main">
+		{% block main %}{% endblock %}
+	</main>
+
+	<aside class="social">
+		<ul class="socialList">
+			<li>
+				<a class="socialLink" href="https://twitter.com/luwes" target="_blank">
+					<svg class="socialLink-icon socialLink-icon--twitter">
+						<use xlink:href="#iconmonstr-twitter-1" />
+					</svg>
+				</a>
+			</li>
+			<li>
+				<a class="socialLink" href="https://github.com/luwes" target="_blank">
+					<svg class="socialLink-icon socialLink-icon--github">
+						<use xlink:href="#iconmonstr-github-1" />
+					</svg>
+				</a>
+			</li>
+{# 			<li>
+				<a class="socialLink" href="https://dribbble.com/luwes" target="_blank">
+					<svg class="socialLink-icon socialLink-icon--dribbble">
+						<use xlink:href="#iconmonstr-dribbble-1" />
+					</svg>
+				</a>
+			</li> #}
+			<li>
+				<a class="socialLink" href="mailto:hix@wesleyxluytenx.com" onmouseover="this.href=this.href.replace(/x/g,'');">
+					<svg class="socialLink-icon socialLink-icon--email">
+						<use xlink:href="#iconmonstr-email-1" />
+					</svg>
+				</a>
+			</li>
+		</ul>
+	</aside>
+
+{# 	<footer class="siteFooter">
+	</footer> #}
+
+{% endblock %}

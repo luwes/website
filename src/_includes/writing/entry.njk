@@ -1,0 +1,39 @@
+{% extends my.layout %}
+
+{% set bodyClass = 'writing entry' %}
+
+{% block main %}
+  <article class="articleEntry">
+
+    {% if featuredImage %}
+      <div class="articleHero">
+        <picture>
+          <source srcset="{% getUrl featuredImage.url | resize({ width: 1440, height: 460 }) | webp %} 1x, {% getUrl featuredImage.url | resize({ width: 2560, height: 800 }) | webp %} 2x" media="(min-width: 640px)">
+          <source srcset="{% getUrl featuredImage.url | resize({ width: 640, height: 320 }) | webp %} 1x, {% getUrl featuredImage.url | resize({ width: 1280, height: 640 }) | webp %} 2x">
+          <source srcset="{% getUrl featuredImage.url | resize({ width: 1440, height: 460 }) %} 1x, {% getUrl featuredImage.url | resize({ width: 2560, height: 800 }) %} 2x" media="(min-width: 640px)">
+          <img class="articleHero-image" srcset="{% getUrl featuredImage.url | resize({ width: 640, height: 320 }) %} 1x, {% getUrl featuredImage.url | resize({ width: 1280, height: 640 }) %} 2x" alt="{{ image.title }}">
+        </picture>
+      </div>
+    {% endif %}
+
+    <header class="articleEntry-header">
+      <time class="articleEntry-time" datetime="{{ page.date | date('iso') }}">
+        {{- page.date | date('LLLL d, y') -}}
+      </time>
+      <h1 class="articleEntry-title">
+        {{ title }}
+      </h1>
+    </header>
+
+    <div class="article-container">
+      <div class="articleRow">
+        <div class="articleRow articleRow--full">
+
+          {{ content | safe }}
+
+        </div>
+      </div>
+    </div>
+
+  </article>
+{% endblock %}

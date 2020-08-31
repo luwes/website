@@ -1,0 +1,43 @@
+---
+title: About
+eleventyNavigation:
+  key: About
+  order: 1
+bodyClass: "homepage index"
+---
+
+{% extends my.layout %}
+
+{% block main %}
+  <div class="container">
+
+    <h1 class="about-title">
+      Hi! My name is <span class="about-fullname">Wesley Luyten</span>.
+      I’m a {{ '1986-03-11' | age }} year-old Belgian web developer and interface designer.
+    </h1>
+
+    <div class="aboutRow">
+      <div class="aboutRow-column aboutRow-column--right">
+        <div class="about-image">
+          <ul class="portrait">
+            {% for i in range(0, 7) %}
+              <li class="portrait-item{% if i == 0 %} portrait-item-isActive{% endif %}">
+                <img class="portrait-image" src="/images/wesley-luyten-{{ i }}.jpg" alt="Wesley Luyten">
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="aboutRow-column aboutRow-column--left">
+        <div class="about-text">
+I love to write code and build functional, user friendly and aesthetically pleasing applications for the web.
+
+I have most experience writing code in high-level programming languages, JavaScript being the top gun. HTML and CSS have very few secrets for me. I would describe myself more as a front-end guy but I can do both front-end and back-end stuff. On the server I wrote mostly in PHP and Python but I’ve had some experience with Ruby as well.
+
+I have a keen eye for detail and get a kick out of optimizing and writing reusable code.
+        </div>
+      </div>
+    </div>
+
+  </div>
+{% endblock %}

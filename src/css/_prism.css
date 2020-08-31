@@ -1,0 +1,90 @@
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */
+
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+/* code */
+
+:root {
+  --codebg: #f8f8f8;
+}
+
+pre,
+code {
+  padding: 0;
+  font-family: Menlo, monospace;
+  color: #657b83;
+  background: var(--codebg);
+  border: none;
+  tab-size: 4;
+  hyphens: none;
+}
+
+pre {
+  margin: 0 0 1.5em;
+  padding: 1em 1em;
+  border: 1px solid #ececec;
+  word-wrap: normal;
+  overflow: auto;
+}
+
+code {
+  font-size: 0.8em;
+}
+
+pre > code {
+  display: block;
+}
+
+:not(pre) > code {
+  padding: 2px 4px;
+}
+
+a code {
+  color: inherit;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #93a1a1;
+  /* base1 */
+}
+
+.token.punctuation,
+.token.attr-name {
+  color: #657b83;
+  /* base00 */
+}
+
+.token.keyword,
+.token.operator {
+  color: #859900;
+  /* green */
+}
+
+.token.tag,
+.token.property {
+  color: #268bd2;
+  /* blue */
+}
+
+.token.string,
+.token.attr-value {
+  color: #2aa198;
+  /* cyan */
+}
+
+.token.boolean {
+  color: #b58900;
+  /* yellow */
+}
+
+.token.number {
+  color: #d33682;
+  /* magenta */
+}

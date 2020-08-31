@@ -1,0 +1,10 @@
+{% set pageTitle %}
+  {%- if title is defined %}{{ title }} - {% endif %}{{ site.name -}}
+{% endset %}
+
+<script>
+  window.pageTitle = '{{ pageTitle }}';
+  window.bodyClass = '{{ bodyClass|default('') }}';
+</script>
+
+{% block main %}{% endblock %}

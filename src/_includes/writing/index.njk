@@ -1,0 +1,32 @@
+{% extends my.layout %}
+
+{% set title = "Writing" %}
+{% set bodyClass = 'writing index' %}
+
+{% block main %}
+  <div class="article-container">
+    <div class="articles">
+      {% for entry in collections.writing | reverse %}
+
+        <article class="article">
+
+          <div class="article-body">
+            <header>
+  {#              <time datetime="{{ entry.postDate|date('Y-m-d\\TH:i:sP') }}">
+                {{- entry.postDate.format('F d, Y') -}}
+              </time> #}
+              <h2 class="article-title">
+                <a class="article-link" href="{{ entry.url | replaceRE('/pjax', '') }}">
+                  {{ entry.data.title }}
+                </a>
+              </h2>
+            </header>
+            {{ entry.data.excerpt }}
+            {# <a href="{{ entry.url }}">Read more</a> #}
+          </div>
+        </article>
+
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
