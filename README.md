@@ -1,6 +1,6 @@
 # Personal website
 
-https://https://wesleyluyten.com
+https://wesleyluyten.com
 
 Built with [Eleventy](https://www.11ty.dev/) this time.
 
