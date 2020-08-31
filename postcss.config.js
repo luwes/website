@@ -19,7 +19,7 @@ const plugins = [
 if (process.env.NODE_ENV === 'prod') {
   plugins.push(
     purgecss({
-      content: ['./src/**/*.{html,njk,md,js}'],
+      content: ['./src/**/*.{html,njk,md,js,svg}'],
       extractors: [
         {
           extractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],

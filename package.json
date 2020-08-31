@@ -14,8 +14,8 @@
     "css:prod": "postcss src/css/style.css -o public/css/style.css",
     "css:dev": "postcss src/css/style.css -o public/css/style.css -w",
     "lint": "eslint src/js",
-    "serve": "cross-env LAYOUT=layouts/body.njk eleventy --serve",
-    "eleventy": "cross-env LAYOUT=layouts/body.njk eleventy",
+    "serve": "cross-env NODE_ENV=dev LAYOUT=layouts/body.njk eleventy --serve",
+    "eleventy": "cross-env NODE_ENV=prod LAYOUT=layouts/body.njk eleventy",
     "pjax:prod": "cross-env NODE_ENV=prod LAYOUT=layouts/pjax.njk eleventy",
     "pjax:dev": "cross-env NODE_ENV=dev LAYOUT=layouts/pjax.njk eleventy --watch"
   },
