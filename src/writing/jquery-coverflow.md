@@ -10,6 +10,7 @@ I noticed that a lot of people are looking for a jQuery implementation of cover-
 
 <div id="player"></div>
 <link rel="stylesheet" href="{{ site.githubPageUrl }}/js-cover-flow/coverflow.css"/>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
 <script src="{{ site.githubPageUrl }}/js-cover-flow/coverflow.js"></script>
 <script>
   $('#player').coverflow({
